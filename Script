@@ -1,0 +1,134 @@
+--9/25/21--
+-- Please don't take my code, if going to be used, use the loadstring.
+
+
+--// Player Variables \\--
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+--// Variables \\--
+local MainUI = Instance.new("ScreenGui") -- UI
+MainUI.Parent = Player.PlayerGui
+MainUI.Name = "iSPLOIT"
+local MainFrame = Instance.new("Frame") -- MainFrame
+MainFrame.BackgroundColor3 = Color3.fromRGB(102,102,102)
+MainFrame.BorderColor = BrickColor.new(255,255,255)
+MainFrame.BorderSizePixel = 3
+MainFrame.Parent = MainUI
+MainFrame.Name = "MainFrame"
+MainFrame.Size = UDim2.new(0.377,0,0.322,0)
+MainFrame.Position = UDim2.new(0,0,0.678,0)
+local FrameGradient = Instance.new("UIGradient") -- Gradient
+local Color1 = ColorSequenceKeypoint.new(0, Color3.fromRGB(81,81,81))
+local Color2 = ColorSequenceKeypoint.new(1, Color3.fromRGB(255,255,255))
+FrameGradient.Parent = MainFrame
+FrameGradient.Offset = Vector2.new(0,0)
+FrameGradient.Rotation = 450
+FrameGradient.Transparency = NumberSequence.new(0, 0.0933, 0)
+FrameGradient.Color = ColorSequence.new({Color1, Color2})
+local IconWatermark = Instance.new("ImageLabel")
+IconWatermark.Name = "Icon"
+IconWatermark.Parent = MainFrame
+IconWatermark.Size = UDim2.new(0.476,0,0.503,0)
+IconWatermark.Position = UDim2.new(0.262,0,-0.328,0)
+IconWatermark.BackgroundTransparency = 1
+IconWatermark.Image = "rbxassetid://7565856799"
+local Credit = Instance.new("TextLabel")
+Credit.BackgroundTransparency = 1
+Credit.TextSize = 20
+Credit.Parent = MainFrame
+Credit.Text = "ROTHEDEVELOPER"
+Credit.Font = "Roboto"
+Credit.TextTransparency = 0.5
+Credit.TextStrokeTransparency = 3
+Credit.TextColor3 = Color3.fromRGB(129,129,129)
+Credit.TextStrokeColor3 = Color3.fromRGB(255,255,255)
+Credit.Position = UDim2.new(0.958,0,-2.103,0)
+Credit.Size = UDim2.new(0.733,0,0.113,0)
+local Button = Instance.new("TextButton")
+Button.TextColor3 = Color3.fromRGB(255,255,255)
+Button.TextStrokeColor3 = Color3.fromRGB(0,0,0)
+Button.TextStrokeTransparency = 0
+Button.Font = "SourceSansSemibold"
+Button.TextScaled = true
+Button.Style = "RobloxRoundButton"
+Button.Size = UDim2.new(0.49, 0, 0.226, 0)
+Button.Position = UDim2.new(0,0,0,0)
+--// Exploits \\--
+local Aimbot = Button:Clone()
+Aimbot.Parent = MainFrame
+Aimbot.Text = "AIMBOT"
+Aimbot.Position = UDim2.new(0,0,0,0)
+local Court1 = Button:Clone()
+Court1.Parent = MainFrame
+Court1.Text = "Court 1"
+Court1.Position = UDim2.new(0,0,0.513,0)
+local Court2 = Button:Clone()
+Court2.Parent = MainFrame
+Court2.Text = "Court 2"
+Court2.Position = UDim2.new(0.51, 0,0.513, 0)
+local Court3 = Button:Clone()
+Court3.Parent = MainFrame
+Court3.Text = "Court 3"
+Court3.Position = UDim2.new(0,0,0.774,0)
+local Court4 = Button:Clone()
+Court4.Parent = MainFrame
+Court4.Text = "Court 4"
+Court4.Position = UDim2.new(0.51,0,0.774,0)
+local ClickTP = Button:Clone()
+ClickTP.Parent = MainFrame
+ClickTP.Text = "Click TP (Q)"
+ClickTP.Position = UDim2.new(0, 0,0.256, 0)
+local Admin = Button:Clone()
+Admin.Text = "Infinite Yield"
+Admin.Parent = MainFrame
+Admin.Position = UDim2.new(0.51, 0, 0.256, 0)
+local Dropball = Button:Clone()
+Dropball.Parent = MainFrame
+Dropball.Text = "Dropball - SOON"
+Dropball.Position = UDim2.new(0.51, 0, 0, 0)
+--// Functions \\--
+Aimbot.MouseButton1Click:Connect(function()
+    local oldHook;
+oldHook = hookmetamethod(game, "__namecall", function(self, ...)
+    local args = {...};
+
+    if (self.Name == "shoot") then
+       args[1] = math.huge;
+    end;
+
+    return oldHook(self, unpack(args));
+    end);
+    print("Aimbot Loaded!")
+end)
+
+Court1.MouseButton1Click:Connect(function()
+    Character.HumanoidRootPart.CFrame = CFrame.new(-241, 16, -44)
+end)
+
+Court2.MouseButton1Click:Connect(function()
+    Character.HumanoidRootPart.CFrame = CFrame.new(-363, 16, -44)
+end)
+
+Court3.MouseButton1Click:Connect(function()
+    Character.HumanoidRootPart.CFrame = CFrame.new(-240, 16, -74)
+end)
+
+Court4.MouseButton1Click:Connect(function()
+    Character.HumanoidRootPart.CFrame = CFrame.new(-363, 16, -73)
+end)
+
+ClickTP.MouseButton1Click:Connect(function()
+mouse = Player:GetMouse()
+
+mouse.KeyDown:connect(function(key)
+if key == "q" then
+    if mouse.Target then
+        Character.HumanoidRootPart.CFrame = CFrame.new(mouse.Hit.x, mouse.Hit.y + 5, mouse.Hit.z)
+           end
+        end
+    end)
+end)
+
+Admin.MouseButton1Click:Connect(function()
+   loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
