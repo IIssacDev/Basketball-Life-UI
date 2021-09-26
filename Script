@@ -1,5 +1,5 @@
 --9/26/21--
---1:56PM--
+--1:06AM--
 -- Please don't take my code, if going to be used, use the loadstring.
 
 --// Services \\--
@@ -41,7 +41,15 @@ AWFrame.Size = UDim2.new(0.198,0,0.422,0)
 AWFrame.BackgroundColor3 = Color3.fromRGB(102,102,102)
 AWFrame.BorderColor = BrickColor.new(255,255,255)
 AWFrame.BorderSizePixel = 3
-AWFrame.Visible = true
+AWFrame.Visible = false
+local AWCredit = Instance.new("TextLabel")
+AWCredit.Text = "Auto Win - I_ssac"
+AWCredit.BackgroundTransparency = 1
+AWCredit.Parent = AWFrame
+AWCredit.Size = UDim2.new(1,0,0.211,0)
+AWCredit.TextColor3 = Color3.fromRGB(255,255,255)
+AWCredit.Font = "SourceSans"
+AWCredit.TextScaled = true
 FrameGradient:Clone().Parent = AWFrame
 local IBFrame = Instance.new("Frame")
 IBFrame.Parent = MainUI
@@ -134,10 +142,12 @@ AWCourt2.Parent = AWFrame
 AWCourt2.Size = UDim2.new(0.965,0,0.191,0)
 AWCourt2.Position = UDim2.new(0.01,0,0.398,0)
 local AWCourt3 = Button:Clone()
+AWCourt3.Parent = AWFrame
 AWCourt3.Text = "Court 3"
 AWCourt3.Size = UDim2.new(0.965,0,0.191,0)
 AWCourt3.Position = UDim2.new(0.01,0,0.59,0)
 local AWCourt4 = Button:Clone()
+AWCourt4.Parent = AWFrame
 AWCourt4.Text = "Court 4"
 AWCourt4.Size = UDim2.new(0.965,0,0.191,0)
 AWCourt4.Position = UDim2.new(0.01,0,0.781,0)
@@ -195,17 +205,18 @@ IBTP.MouseButton1Click:Connect(function()
 	end
 end)
 
+   AutoUI = false
+
 AutoWin.MouseButton1Click:Connect(function()
-	AutoUI = false
-	if AutoUI == false then
-		AWFrame.Visible = true
-		AutoUI = true
-	else
-		if AutoUI == true then
-			AWFrame.Visible = false
-			AutoUI = false
-		end
-	end
+   if AutoUI == false then
+   AWFrame.Visible = true
+   AutoUI = true
+   else
+   if AutoUI == true then
+     AWFrame.Visible = false
+     AutoUI = false
+       end
+    end
 end)
 Aimbot.MouseButton1Click:Connect(function()
 	local oldHook;
@@ -272,25 +283,25 @@ CloseKeyBinds.MouseButton1Click:Connect(function()
 end)
 
 AWCourt1.MouseButton1Click:Connect(function()
-	Character.HumanoidRootPart.CFrame = CFrame.new(-316.335114, 13.3748684, -82.5517578, 0, -1, -0, -1, 0, -0, 0, 0, -1)
-	wait(.1)
-	Character.HumanoidRootPart.CFrame = CFrame.new(-316.335114, 13.3748684, -107.051758, 0, -1, -0, -1, 0, -0, 0, 0, -1)
+    Character.HumanoidRootPart.CFrame = CFrame.new(-316.335114, 13.3748684, -82.5517578, 0, -1, -0, -1, 0, -0, 0, 0, -1)
+    wait(.1)
+    Character.HumanoidRootPart.CFrame = CFrame.new(-316.335114, 13.3748684, -107.051758, 0, -1, -0, -1, 0, -0, 0, 0, -1)
 end)
 
 AWCourt2.MouseButton1Click:Connect(function()
-	Character.HumanoidRootPart.CFrame = CFrame.new(-316.335114, 13.3748684, -8.55175781, 0, -1, -0, -1, 0, -0, 0, 0, -1)
-	wait(.1)
-	Character.HumanoidRootPart.CFrame = CFrame.new(-316.335114, 13.3748684, -33.0517578, 0, -1, -0, -1, 0, -0, 0, 0, -1)
+    Character.HumanoidRootPart.CFrame = CFrame.new(-316.335114, 13.3748684, -8.55175781, 0, -1, -0, -1, 0, -0, 0, 0, -1)
+    wait(.1)
+    Character.HumanoidRootPart.CFrame = CFrame.new(-316.335114, 13.3748684, -33.0517578, 0, -1, -0, -1, 0, -0, 0, 0, -1)
 end)
 
 AWCourt3.MouseButton1Click:Connect(function()
-	Character.HumanoidRootPart.CFrame = CFrame.new(-286.911194, 13.3748684, -109.062683, 0, 1, -0, -1, 0, 0, 0, 0, 1)
-	wait(.1)
-	Character.HumanoidRootPart.CFrame = CFrame.new(-286.911194, 13.3748684, -84.5626831, 0, 1, -0, -1, 0, 0, 0, 0, 1)
+    Character.HumanoidRootPart.CFrame = CFrame.new(-286.911194, 13.3748684, -109.062683, 0, 1, -0, -1, 0, 0, 0, 0, 1)
+    wait(.1)
+    Character.HumanoidRootPart.CFrame = CFrame.new(-286.911194, 13.3748684, -84.5626831, 0, 1, -0, -1, 0, 0, 0, 0, 1)
 end)
 
 AWCourt4.MouseButton1Click:Connect(function()
-	Character.HumanoidRootPart.CFrame = CFrame.new(-286.911194, 13.3748684, -35.0626831, 0, 1, -0, -1, 0, 0, 0, 0, 1)
-	wait(.1)
-	Character.HumanoidRootPart.CFrame = CFrame.new(-286.911194, 13.3748684, -10.5626831, 0, 1, -0, -1, 0, 0, 0, 0, 1)
+    Character.HumanoidRootPart.CFrame = CFrame.new(-286.911194, 13.3748684, -35.0626831, 0, 1, -0, -1, 0, 0, 0, 0, 1)
+    wait(.1)
+    Character.HumanoidRootPart.CFrame = CFrame.new(-286.911194, 13.3748684, -10.5626831, 0, 1, -0, -1, 0, 0, 0, 0, 1)
 end)
