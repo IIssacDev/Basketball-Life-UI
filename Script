@@ -1,5 +1,5 @@
 --9/26/21--
---1:06AM--
+--1:56PM--
 -- Please don't take my code, if going to be used, use the loadstring.
 
 --// Services \\--
@@ -19,12 +19,48 @@ MainFrame.Parent = MainUI
 MainFrame.Name = "MainFrame"
 MainFrame.Size = UDim2.new(0.377,0,0.322,0)
 MainFrame.Position = UDim2.new(0,0,1,0)
+local FrameGradient = Instance.new("UIGradient") -- Gradient
+local Color1 = ColorSequenceKeypoint.new(0, Color3.fromRGB(81,81,81))
+local Color2 = ColorSequenceKeypoint.new(1, Color3.fromRGB(255,255,255))
+FrameGradient.Parent = MainFrame
+FrameGradient.Offset = Vector2.new(0,0)
+FrameGradient.Rotation = 450
+FrameGradient.Transparency = NumberSequence.new(0, 0.0933, 0)
+FrameGradient.Color = ColorSequence.new({Color1, Color2})
 local KeybindFrame = Instance.new("Frame")
 KeybindFrame.Parent = MainUI
 KeybindFrame.Name = "Keybinds"
 KeybindFrame.Position = UDim2.new(0.842, 0, 0.665, 0)
 KeybindFrame.Size = UDim2.new(0.158, 0, 0.342, 0)
 KeybindFrame.BackgroundTransparency = 1
+local AWFrame = Instance.new("Frame")
+AWFrame.Parent = MainUI
+AWFrame.Name = "IBFrame"
+AWFrame.Position = UDim2.new(0,0,0,0)
+AWFrame.Size = UDim2.new(0.198,0,0.422,0)
+AWFrame.BackgroundColor3 = Color3.fromRGB(102,102,102)
+AWFrame.BorderColor = BrickColor.new(255,255,255)
+AWFrame.BorderSizePixel = 3
+AWFrame.Visible = true
+FrameGradient:Clone().Parent = AWFrame
+local IBFrame = Instance.new("Frame")
+IBFrame.Parent = MainUI
+IBFrame.Name = "IBFrame"
+IBFrame.Position = UDim2.new(0,0,0,0)
+IBFrame.Size = UDim2.new(0.198,0,0.422,0)
+IBFrame.BackgroundColor3 = Color3.fromRGB(102,102,102)
+IBFrame.BorderColor = BrickColor.new(255,255,255)
+IBFrame.BorderSizePixel = 3
+IBFrame.Visible = false
+FrameGradient:Clone().Parent = IBFrame
+local IBCredit = Instance.new("TextLabel")
+IBCredit.Text = "IB TP - I_ssac"
+IBCredit.BackgroundTransparency = 1
+IBCredit.Parent = IBFrame
+IBCredit.Size = UDim2.new(1,0,0.211,0)
+IBCredit.TextColor3 = Color3.fromRGB(255,255,255)
+IBCredit.Font = "SourceSans"
+IBCredit.TextScaled = true
 local OpenText = Instance.new("TextLabel")
 OpenText.Text = "F - Open"
 OpenText.Parent = KeybindFrame
@@ -54,14 +90,6 @@ CloseKeyBinds.Text = "X"
 
 Open = false
 
-local FrameGradient = Instance.new("UIGradient") -- Gradient
-local Color1 = ColorSequenceKeypoint.new(0, Color3.fromRGB(81,81,81))
-local Color2 = ColorSequenceKeypoint.new(1, Color3.fromRGB(255,255,255))
-FrameGradient.Parent = MainFrame
-FrameGradient.Offset = Vector2.new(0,0)
-FrameGradient.Rotation = 450
-FrameGradient.Transparency = NumberSequence.new(0, 0.0933, 0)
-FrameGradient.Color = ColorSequence.new({Color1, Color2})
 local IconWatermark = Instance.new("ImageLabel")
 IconWatermark.Name = "Icon"
 IconWatermark.Parent = MainFrame
@@ -91,26 +119,52 @@ Button.Style = "RobloxRoundButton"
 Button.Size = UDim2.new(0.49, 0, 0.226, 0)
 Button.Position = UDim2.new(0,0,0,0)
 --// Exploits \\--
+local AutoWin = Button:Clone()
+AutoWin.Parent = MainFrame
+AutoWin.Text = "Auto Win"
+AutoWin.Position = UDim2.new(0.507,0,0.513,0)
+local AWCourt1 = Button:Clone()
+AWCourt1.Parent = AWFrame
+AWCourt1.Text = "Court 1"
+AWCourt1.Size = UDim2.new(0.965,0,0.191,0)
+AWCourt1.Position = UDim2.new(0.01,0,0.207,0)
+local AWCourt2 = Button:Clone()
+AWCourt2.Text = "Court 2"
+AWCourt2.Parent = AWFrame
+AWCourt2.Size = UDim2.new(0.965,0,0.191,0)
+AWCourt2.Position = UDim2.new(0.01,0,0.398,0)
+local AWCourt3 = Button:Clone()
+AWCourt3.Text = "Court 3"
+AWCourt3.Size = UDim2.new(0.965,0,0.191,0)
+AWCourt3.Position = UDim2.new(0.01,0,0.59,0)
+local AWCourt4 = Button:Clone()
+AWCourt4.Text = "Court 4"
+AWCourt4.Size = UDim2.new(0.965,0,0.191,0)
+AWCourt4.Position = UDim2.new(0.01,0,0.781,0)
 local Aimbot = Button:Clone()
 Aimbot.Parent = MainFrame
 Aimbot.Text = "AIMBOT"
 Aimbot.Position = UDim2.new(0,0,0,0)
 local Court1 = Button:Clone()
-Court1.Parent = MainFrame
+Court1.Parent = IBFrame
 Court1.Text = "Court 1"
-Court1.Position = UDim2.new(0,0,0.513,0)
+Court1.Size = UDim2.new(0.965,0,0.191,0)
+Court1.Position = UDim2.new(0.01,0,0.207,0)
 local Court2 = Button:Clone()
-Court2.Parent = MainFrame
+Court2.Parent = IBFrame
+Court2.Size = UDim2.new(0.965,0,0.191,0)
 Court2.Text = "Court 2"
-Court2.Position = UDim2.new(0.51, 0,0.513, 0)
+Court2.Position = UDim2.new(0.01,0,0.398,0)
 local Court3 = Button:Clone()
-Court3.Parent = MainFrame
+Court3.Parent = IBFrame
 Court3.Text = "Court 3"
-Court3.Position = UDim2.new(0,0,0.774,0)
+Court3.Size = UDim2.new(0.965,0,0.191,0)
+Court3.Position = UDim2.new(0.01,0,0.59,0)
 local Court4 = Button:Clone()
-Court4.Parent = MainFrame
+Court4.Parent = IBFrame
 Court4.Text = "Court 4"
-Court4.Position = UDim2.new(0.51,0,0.774,0)
+Court4.Size = UDim2.new(0.965,0,0.191,0)
+Court4.Position = UDim2.new(0.01,0,0.781,0)
 local ClickTP = Button:Clone()
 ClickTP.Parent = MainFrame
 ClickTP.Text = "Click TP (Q)"
@@ -123,7 +177,36 @@ local Dropball = Button:Clone()
 Dropball.Parent = MainFrame
 Dropball.Text = "Dropball - SOON"
 Dropball.Position = UDim2.new(0.51, 0, 0, 0)
+local IBTP = Button:Clone()
+IBTP.Text = "IB TELEPORTS"
+IBTP.Position = UDim2.new(0,0,0.513,0)
+IBTP.Parent = MainFrame
+IBOPEN = false
 --// Functions \\--
+IBTP.MouseButton1Click:Connect(function()
+	if IBOPEN == false then
+		IBFrame.Visible = true
+		IBOPEN = true
+	else
+		if IBOPEN == true then
+			IBFrame.Visible = false
+			IBOPEN = false
+		end
+	end
+end)
+
+AutoWin.MouseButton1Click:Connect(function()
+	AutoUI = false
+	if AutoUI == false then
+		AWFrame.Visible = true
+		AutoUI = true
+	else
+		if AutoUI == true then
+			AWFrame.Visible = false
+			AutoUI = false
+		end
+	end
+end)
 Aimbot.MouseButton1Click:Connect(function()
 	local oldHook;
 	oldHook = hookmetamethod(game, "__namecall", function(self, ...)
@@ -139,19 +222,19 @@ Aimbot.MouseButton1Click:Connect(function()
 end)
 
 Court1.MouseButton1Click:Connect(function()
-	Character.HumanoidRootPart.CFrame = CFrame.new(-241, 16, -44)
+	Character.HumanoidRootPart.CFrame = CFrame.new(-362.526855, 17.2331371, -72.3829727, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 end)
 
 Court2.MouseButton1Click:Connect(function()
-	Character.HumanoidRootPart.CFrame = CFrame.new(-363, 16, -44)
+	Character.HumanoidRootPart.CFrame = CFrame.new(-362.643372, 17.2331371, -45.2314682, -1, 0, 0, 0, 1, 0, 0, 0, -1)
 end)
 
 Court3.MouseButton1Click:Connect(function()
-	Character.HumanoidRootPart.CFrame = CFrame.new(-240, 16, -74)
+	Character.HumanoidRootPart.CFrame = CFrame.new(-240.602936, 17.2331371, -72.3829727, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 end)
 
 Court4.MouseButton1Click:Connect(function()
-	Character.HumanoidRootPart.CFrame = CFrame.new(-363, 16, -73)
+	Character.HumanoidRootPart.CFrame = CFrame.new(-240.719452, 17.2331371, -45.2314682, -1, 0, 0, 0, 1, 0, 0, 0, -1)
 end)
 
 ClickTP.MouseButton1Click:Connect(function()
@@ -184,6 +267,30 @@ end)
 
 CloseKeyBinds.MouseButton1Click:Connect(function()
 	KeybindFrame.Visible = false
-    print("F - Open")
-    print("L - Close")
+	print("F - Open")
+	print("L - Close")
+end)
+
+AWCourt1.MouseButton1Click:Connect(function()
+	Character.HumanoidRootPart.CFrame = CFrame.new(-316.335114, 13.3748684, -82.5517578, 0, -1, -0, -1, 0, -0, 0, 0, -1)
+	wait(.1)
+	Character.HumanoidRootPart.CFrame = CFrame.new(-316.335114, 13.3748684, -107.051758, 0, -1, -0, -1, 0, -0, 0, 0, -1)
+end)
+
+AWCourt2.MouseButton1Click:Connect(function()
+	Character.HumanoidRootPart.CFrame = CFrame.new(-316.335114, 13.3748684, -8.55175781, 0, -1, -0, -1, 0, -0, 0, 0, -1)
+	wait(.1)
+	Character.HumanoidRootPart.CFrame = CFrame.new(-316.335114, 13.3748684, -33.0517578, 0, -1, -0, -1, 0, -0, 0, 0, -1)
+end)
+
+AWCourt3.MouseButton1Click:Connect(function()
+	Character.HumanoidRootPart.CFrame = CFrame.new(-286.911194, 13.3748684, -109.062683, 0, 1, -0, -1, 0, 0, 0, 0, 1)
+	wait(.1)
+	Character.HumanoidRootPart.CFrame = CFrame.new(-286.911194, 13.3748684, -84.5626831, 0, 1, -0, -1, 0, 0, 0, 0, 1)
+end)
+
+AWCourt4.MouseButton1Click:Connect(function()
+	Character.HumanoidRootPart.CFrame = CFrame.new(-286.911194, 13.3748684, -35.0626831, 0, 1, -0, -1, 0, 0, 0, 0, 1)
+	wait(.1)
+	Character.HumanoidRootPart.CFrame = CFrame.new(-286.911194, 13.3748684, -10.5626831, 0, 1, -0, -1, 0, 0, 0, 0, 1)
 end)
