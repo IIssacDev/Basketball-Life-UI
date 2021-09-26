@@ -1,7 +1,9 @@
---9/25/21--
+--9/26/21--
+--1:06AM--
 -- Please don't take my code, if going to be used, use the loadstring.
 
-
+--// Services \\--
+local playerInputService = game:GetService("UserInputService")
 --// Player Variables \\--
 local Player = game.Players.LocalPlayer
 local Character = Player.Character
@@ -16,7 +18,42 @@ MainFrame.BorderSizePixel = 3
 MainFrame.Parent = MainUI
 MainFrame.Name = "MainFrame"
 MainFrame.Size = UDim2.new(0.377,0,0.322,0)
-MainFrame.Position = UDim2.new(0,0,0.678,0)
+MainFrame.Position = UDim2.new(0,0,1,0)
+local KeybindFrame = Instance.new("Frame")
+KeybindFrame.Parent = MainUI
+KeybindFrame.Name = "Keybinds"
+KeybindFrame.Position = UDim2.new(0.842, 0, 0.665, 0)
+KeybindFrame.Size = UDim2.new(0.158, 0, 0.342, 0)
+KeybindFrame.BackgroundTransparency = 1
+local OpenText = Instance.new("TextLabel")
+OpenText.Text = "F - Open"
+OpenText.Parent = KeybindFrame
+OpenText.Position = UDim2.new(0,0,0.464,0)
+OpenText.Size = UDim2.new(1,0,0.237,0)
+OpenText.BackgroundTransparency = 1
+OpenText.TextColor3 = Color3.fromRGB(255,255,255)
+OpenText.TextScaled = true
+OpenText.Font = "ArialBold"
+local CloseText = Instance.new("TextLabel")
+CloseText.Text = "L - Close"
+CloseText.Parent = KeybindFrame
+CloseText.Position = UDim2.new(0,0,0.734,0)
+CloseText.Size = UDim2.new(1,0,0.237,0)
+CloseText.BackgroundTransparency = 1
+CloseText.TextColor3 = Color3.fromRGB(255,255,255)
+CloseText.TextScaled = true
+CloseText.Font = "ArialBold"
+local CloseKeyBinds = Instance.new("TextButton")
+CloseKeyBinds.Parent = KeybindFrame
+CloseKeyBinds.BackgroundTransparency = 1
+CloseKeyBinds.Position = UDim2.new(0.725,0,0.251,0)
+CloseKeyBinds.Size = UDim2.new(0.269,0,0.208,0)
+CloseKeyBinds.TextColor3 = Color3.fromRGB(255,0,0)
+CloseKeyBinds.TextScaled = true
+CloseKeyBinds.Text = "X"
+
+Open = false
+
 local FrameGradient = Instance.new("UIGradient") -- Gradient
 local Color1 = ColorSequenceKeypoint.new(0, Color3.fromRGB(81,81,81))
 local Color2 = ColorSequenceKeypoint.new(1, Color3.fromRGB(255,255,255))
@@ -35,15 +72,15 @@ IconWatermark.Image = "rbxassetid://7565856799"
 local Credit = Instance.new("TextLabel")
 Credit.BackgroundTransparency = 1
 Credit.TextSize = 20
-Credit.Parent = MainFrame
+Credit.Parent = MainUI
 Credit.Text = "ROTHEDEVELOPER"
 Credit.Font = "Roboto"
 Credit.TextTransparency = 0.5
 Credit.TextStrokeTransparency = 3
 Credit.TextColor3 = Color3.fromRGB(129,129,129)
 Credit.TextStrokeColor3 = Color3.fromRGB(255,255,255)
-Credit.Position = UDim2.new(0.958,0,-2.103,0)
-Credit.Size = UDim2.new(0.733,0,0.113,0)
+Credit.Position = UDim2.new(0.4,0,0,0)
+Credit.Size = UDim2.new(0.197,0,0.063,0)
 local Button = Instance.new("TextButton")
 Button.TextColor3 = Color3.fromRGB(255,255,255)
 Button.TextStrokeColor3 = Color3.fromRGB(0,0,0)
@@ -88,47 +125,65 @@ Dropball.Text = "Dropball - SOON"
 Dropball.Position = UDim2.new(0.51, 0, 0, 0)
 --// Functions \\--
 Aimbot.MouseButton1Click:Connect(function()
-    local oldHook;
-oldHook = hookmetamethod(game, "__namecall", function(self, ...)
-    local args = {...};
+	local oldHook;
+	oldHook = hookmetamethod(game, "__namecall", function(self, ...)
+		local args = {...};
 
-    if (self.Name == "shoot") then
-       args[1] = math.huge;
-    end;
+		if (self.Name == "shoot") then
+			args[1] = math.huge;
+		end;
 
-    return oldHook(self, unpack(args));
-    end);
-    print("Aimbot Loaded!")
+		return oldHook(self, unpack(args));
+	end);
+	print("Aimbot Loaded!")
 end)
 
 Court1.MouseButton1Click:Connect(function()
-    Character.HumanoidRootPart.CFrame = CFrame.new(-241, 16, -44)
+	Character.HumanoidRootPart.CFrame = CFrame.new(-241, 16, -44)
 end)
 
 Court2.MouseButton1Click:Connect(function()
-    Character.HumanoidRootPart.CFrame = CFrame.new(-363, 16, -44)
+	Character.HumanoidRootPart.CFrame = CFrame.new(-363, 16, -44)
 end)
 
 Court3.MouseButton1Click:Connect(function()
-    Character.HumanoidRootPart.CFrame = CFrame.new(-240, 16, -74)
+	Character.HumanoidRootPart.CFrame = CFrame.new(-240, 16, -74)
 end)
 
 Court4.MouseButton1Click:Connect(function()
-    Character.HumanoidRootPart.CFrame = CFrame.new(-363, 16, -73)
+	Character.HumanoidRootPart.CFrame = CFrame.new(-363, 16, -73)
 end)
 
 ClickTP.MouseButton1Click:Connect(function()
-mouse = Player:GetMouse()
+	mouse = Player:GetMouse()
 
-mouse.KeyDown:connect(function(key)
-if key == "q" then
-    if mouse.Target then
-        Character.HumanoidRootPart.CFrame = CFrame.new(mouse.Hit.x, mouse.Hit.y + 5, mouse.Hit.z)
-           end
-        end
-    end)
+	mouse.KeyDown:connect(function(key)
+		if key == "q" then
+			if mouse.Target then
+				Character.HumanoidRootPart.CFrame = CFrame.new(mouse.Hit.x, mouse.Hit.y + 5, mouse.Hit.z)
+			end
+		end
+	end)
 end)
 
 Admin.MouseButton1Click:Connect(function()
-   loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+
+playerInputService.InputBegan:Connect(function(input)
+	if Open == false then
+		if input.KeyCode == Enum.KeyCode.F then
+			MainFrame:TweenPosition(UDim2.new(0,0,0.677,0), "Out", "Quint", 1, true)
+		else
+			if input.KeyCode == Enum.KeyCode.L then
+				MainFrame:TweenPosition(UDim2.new(0,0,1,0), "Out", "Quint", 1, true)
+			end
+		end
+	end
+end)
+
+CloseKeyBinds.MouseButton1Click:Connect(function()
+	KeybindFrame.Visible = false
+    print("F - Open")
+    print("L - Close")
 end)
