@@ -244,7 +244,7 @@ Aimbot.MouseButton1Click:Connect(function()
 
 		return oldHook(self, unpack(args));
 	end);
-	print("Aimbot Loaded!")
+	print("Aimbot Loaded! BY: ou1z")
 end)
 
 Court1.MouseButton1Click:Connect(function()
