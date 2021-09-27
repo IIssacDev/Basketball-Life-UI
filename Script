@@ -2,12 +2,12 @@
 --1:06AM--
 -- Please don't take my code, if going to be used, use the loadstring.
 
---// Services \\--
+--// Services --
 local playerInputService = game:GetService("UserInputService")
---// Player Variables \\--
+--// Player Variables --
 local Player = game.Players.LocalPlayer
 local Character = Player.Character
---// Variables \\--
+--// Variables --
 local MainUI = Instance.new("ScreenGui") -- UI
 MainUI.Parent = Player.PlayerGui
 MainUI.Name = "iSPLOIT"
@@ -109,11 +109,11 @@ local Credit = Instance.new("TextLabel")
 Credit.BackgroundTransparency = 1
 Credit.TextSize = 20
 Credit.Parent = MainUI
-Credit.Text = "ROTHEDEVELOPER"
+Credit.Text = "I_SSAC"
 Credit.Font = "Roboto"
 Credit.TextTransparency = 0.5
 Credit.TextStrokeTransparency = 3
-Credit.TextColor3 = Color3.fromRGB(129,129,129)
+Credit.TextColor3 = Color3.fromRGB(255,255,255)
 Credit.TextStrokeColor3 = Color3.fromRGB(255,255,255)
 Credit.Position = UDim2.new(0.4,0,0,0)
 Credit.Size = UDim2.new(0.197,0,0.063,0)
@@ -126,7 +126,7 @@ Button.TextScaled = true
 Button.Style = "RobloxRoundButton"
 Button.Size = UDim2.new(0.49, 0, 0.226, 0)
 Button.Position = UDim2.new(0,0,0,0)
---// Exploits \\--
+--// Exploits --
 local AutoWin = Button:Clone()
 AutoWin.Parent = MainFrame
 AutoWin.Text = "Auto Win"
@@ -185,14 +185,29 @@ Admin.Parent = MainFrame
 Admin.Position = UDim2.new(0.51, 0, 0.256, 0)
 local Dropball = Button:Clone()
 Dropball.Parent = MainFrame
-Dropball.Text = "Dropball - SOON"
+Dropball.Text = "DROPBALL"
 Dropball.Position = UDim2.new(0.51, 0, 0, 0)
 local IBTP = Button:Clone()
 IBTP.Text = "IB TELEPORTS"
 IBTP.Position = UDim2.new(0,0,0.513,0)
 IBTP.Parent = MainFrame
+local InfStam = Button:Clone()
+InfStam.Position = UDim2.new(0.507,0,0.774,0)
+InfStam.Parent = MainFrame
+InfStam.RichText = true
+InfStam.Text = [[<font color="rgb(255,255,0)">INFINITE</font> STAMINA]]
 IBOPEN = false
---// Functions \\--
+--// Functions --
+InfStam.MouseButton1Click:Connect(function()
+    while wait() do
+        Player.player.basket.stamina.Value = 100
+    end
+end)
+Dropball.MouseButton1Click:Connect(function()
+   local ReplicatedStorage = game:GetService("ReplicatedStorage")
+   ReplicatedStorage.events.remote.dropball:FireServer()
+end)
+
 IBTP.MouseButton1Click:Connect(function()
 	if IBOPEN == false then
 		IBFrame.Visible = true
@@ -304,10 +319,4 @@ AWCourt4.MouseButton1Click:Connect(function()
     Character.HumanoidRootPart.CFrame = CFrame.new(-286.911194, 13.3748684, -35.0626831, 0, 1, -0, -1, 0, 0, 0, 0, 1)
     wait(.1)
     Character.HumanoidRootPart.CFrame = CFrame.new(-286.911194, 13.3748684, -10.5626831, 0, 1, -0, -1, 0, 0, 0, 0, 1)
-end)
-
-playerInputService.InputBegan:Connect(function(input)
-    if input.KeyCode == Enum.KeyCode.P then
-    Player.PlayerGui.iSPLOIT:Destroy()
-    end
 end)
