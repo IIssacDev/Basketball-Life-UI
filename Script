@@ -305,3 +305,9 @@ AWCourt4.MouseButton1Click:Connect(function()
     wait(.1)
     Character.HumanoidRootPart.CFrame = CFrame.new(-286.911194, 13.3748684, -10.5626831, 0, 1, -0, -1, 0, 0, 0, 0, 1)
 end)
+
+playerInputService.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.P then
+    Player.PlayerGui.iSPLOIT:Destroy()
+    end
+end)
