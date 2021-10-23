@@ -1,5 +1,5 @@
---9/26/21--
---1:06AM--
+--10/22/21--
+--6:35pm--
 -- Please don't take my code, if going to be used, use the loadstring.
 
 --// Services --
@@ -42,6 +42,24 @@ AWFrame.BackgroundColor3 = Color3.fromRGB(102,102,102)
 AWFrame.BorderColor = BrickColor.new(255,255,255)
 AWFrame.BorderSizePixel = 3
 AWFrame.Visible = false
+local MascotFrame = Instance.new("Frame")
+MascotFrame.Name = "MascotFrame"
+MascotFrame.Parent = MainUI
+MascotFrame.Position = UDim2.new(0,0,0,0)
+MascotFrame.Size = UDim2.new(0.198,0,0.422,0)
+MascotFrame.BackgroundColor3 = Color3.fromRGB(102,102,102)
+MascotFrame.BorderColor = BrickColor.new(255,255,255)
+MascotFrame.BorderSizePixel = 3
+MascotFrame.Visible = false
+local MascotTitle = Instance.new("TextLabel")
+MascotTitle.Text = "Mascots - I_ssac"
+MascotTitle.BackgroundTransparency = 1
+MascotTitle.Parent = MascotFrame
+MascotTitle.Font = "SourceSans"
+MascotTitle.TextColor3 = Color3.fromRGB(255,255,255)
+MascotTitle.Size = UDim2.new(1,0,0.211,0)
+MascotTitle.TextScaled = true
+FrameGradient:Clone().Parent = MascotFrame
 local AWCredit = Instance.new("TextLabel")
 AWCredit.Text = "Auto Win - I_ssac"
 AWCredit.BackgroundTransparency = 1
@@ -115,7 +133,7 @@ Credit.TextTransparency = 0.5
 Credit.TextStrokeTransparency = 3
 Credit.TextColor3 = Color3.fromRGB(255,255,255)
 Credit.TextStrokeColor3 = Color3.fromRGB(255,255,255)
-Credit.Position = UDim2.new(0.4,0,0,0)
+Credit.Position = UDim2.new(0.4,0,-0.1,0)
 Credit.Size = UDim2.new(0.197,0,0.063,0)
 local Button = Instance.new("TextButton")
 Button.TextColor3 = Color3.fromRGB(255,255,255)
@@ -127,10 +145,17 @@ Button.Style = "RobloxRoundButton"
 Button.Size = UDim2.new(0.49, 0, 0.226, 0)
 Button.Position = UDim2.new(0,0,0,0)
 --// Exploits --
+local Mascots = Button:Clone()
+Mascots.Parent = MainFrame
+Mascots.RichText = true
+Mascots.Text = "<b>Mascots</b>"
+Mascots.Position = UDim2.new(0,0,.78,0)
+Mascots.TextTransparency = 0.5
 local AutoWin = Button:Clone()
 AutoWin.Parent = MainFrame
 AutoWin.Text = "Auto Win"
 AutoWin.Position = UDim2.new(0.507,0,0.513,0)
+AutoWin.TextTransparency = .5
 local AWCourt1 = Button:Clone()
 AWCourt1.Parent = AWFrame
 AWCourt1.Text = "Court 1"
@@ -220,7 +245,7 @@ IBTP.MouseButton1Click:Connect(function()
 	end
 end)
 
-   AutoUI = false
+   AutoUI = nil
 
 AutoWin.MouseButton1Click:Connect(function()
    if AutoUI == false then
@@ -248,19 +273,19 @@ Aimbot.MouseButton1Click:Connect(function()
 end)
 
 Court1.MouseButton1Click:Connect(function()
-	Character.HumanoidRootPart.CFrame = CFrame.new(-362.526855, 17.2331371, -72.3829727, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Character.HumanoidRootPart.CFrame = CFrame.new(-607.440063, 5.41961384, -62.878212, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 end)
 
 Court2.MouseButton1Click:Connect(function()
-	Character.HumanoidRootPart.CFrame = CFrame.new(-362.643372, 17.2331371, -45.2314682, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+	Character.HumanoidRootPart.CFrame = CFrame.new(-607.643372, 5.31188965, -45.2314682, -1, 0, 0, 0, 1, 0, 0, 0, -1)
 end)
 
 Court3.MouseButton1Click:Connect(function()
-	Character.HumanoidRootPart.CFrame = CFrame.new(-240.602936, 17.2331371, -72.3829727, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+	Character.HumanoidRootPart.CFrame = CFrame.new(-485.602905, 5.31188965, -72.3829727, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 end)
 
 Court4.MouseButton1Click:Connect(function()
-	Character.HumanoidRootPart.CFrame = CFrame.new(-240.719452, 17.2331371, -45.2314682, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+	Character.HumanoidRootPart.CFrame = CFrame.new(-485.719452, 5.31188965, -45.2314682, -1, 0, 0, 0, 1, 0, 0, 0, -1)
 end)
 
 ClickTP.MouseButton1Click:Connect(function()
@@ -320,3 +345,44 @@ AWCourt4.MouseButton1Click:Connect(function()
     wait(.1)
     Character.HumanoidRootPart.CFrame = CFrame.new(-286.911194, 13.3748684, -10.5626831, 0, 1, -0, -1, 0, 0, 0, 0, 1)
 end)
+
+--[[Mascots.MouseButton1Click:Connect(function()
+	local chr = game.Players.LocalPlayer.Character
+
+	local Benny = Instance.new("Accessory")
+    Benny.Parent = chr
+	Benny.AttachmentForward = Vector3.new(0,0,-1)
+	Benny.AttachmentPos = Vector3.new(0,0.35,0.1)
+	Benny.AttachmentRight = Vector3.new(1,0,0)
+	Benny.AttachmentUp = Vector3.new(0,1,0)
+	local BennyPart = Instance.new("Part")
+	BennyPart.Size = UDim2.new(2,1,2)
+	BennyPart.Anchored = false
+	BennyPart.CanCollide = true
+	BennyPart.CanTouch = true
+	BennyPart.Parent = Benny
+	local BennyAttach = Instance.new("Attachment")
+	BennyAttach.Parent = BennyPart
+	BennyAttach.Orientation = Vector3.new(0,-0,-0)
+	BennyAttach.Position = UDim2.new(0,0.45,0.1)
+	BennyAttach.WorldAxis = Vector3.new(1,-0,0)
+	BennyAttach.WorldOrientation = Vector3.new(0,-0,-0)
+	BennyAttach.WorldPosition = Vector3.new(0,6.45,0.1)
+	BennyAttach.WorldSecondaryAxis = Vector3.new(0,1,0)
+	BennyAttach.Axis = Vector3.new(1,-0,0)
+	BennyAttach.SecondaryAxis = Vector3.new(0,-0,-0)
+	local BennyMesh = Instance.new("SpecialMesh")
+	BennyMesh.Parent = BennyPart
+	BennyMesh.MeshId = "http://www.roblox.com/asset/?id=14459949"
+	BennyMesh.TextureId = "http://www.roblox.com/asset/?id=281914184"
+	BennyMesh.Size = UDim2.new(1.1,1.1,1.1)
+	local Shirt = Instance.new("Shirt")
+	Shirt.ShirtTemplate = "http://www.roblox.com/asset/?id=272655600"
+	Shirt.Parent = chr
+	chr["Body Colors"].HeadColor3 = Color3.fromRGB(225,0,0)
+	chr["Body Colors"].TorsoColor3 = Color3.fromRGB(225,0,0)
+	chr["Body Colors"].LeftArmColor3 = Color3.fromRGB(225,0,0)
+	chr["Body Colors"].RightArmColor3 = Color3.fromRGB(225,0,0)
+       chr["Body Colors"].RightLegColor3 = Color3.fromRGB(225,0,0)
+       chr["Body Colors"].LeftLegColor3 = Color3.fromRGB(225,0,0)
+end)]]
