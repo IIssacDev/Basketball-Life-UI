@@ -1,0 +1,51 @@
+local XanaxUILib = loadstring(game:HttpGet("https://raw.githubusercontent.com/IIssacDev/iSPLOIT-Library-Config/main/LibraryConfig"))()
+local Ui = XanaxUILib:CreateWindow("iSPLOIT")
+local Info = Ui:CreateSection("<b>INFO</b>")
+local Main = Ui:CreateSection("<b>MAIN</b>")
+local Player = game.Players.LocalPlayer
+local Character = Ui:CreateSection("<b>CHARACTER</b>")
+local Teleports = Ui:CreateSection("<b>TELEPORTS</b>")
+
+--// Info
+Info:CreateLabel([[<b>BB Life (PHASE 2) | EXPLOIT</b>]])
+Info:CreateLabel(string.upper("github.com/iissacdev"))
+Info:CreateButton([[                       <font color="rgb(255,191,0)">Destroy UI</font>]], function() XanaxUILib.functions:DestroyGUI() end)
+Info:CreateLabel("LAST UPDATE: 12/1/2021")
+
+--// Main
+Main:CreateButton("AIMBOT", function() 	local oldHook;
+	oldHook = hookmetamethod(game, "__namecall", function(self, ...)
+		local args = {...};
+
+		if (self.Name == "shoot") then
+			args[1] = math.huge;
+		end;
+
+		return oldHook(self, unpack(args));
+	end);
+	print("Aimbot Loaded! BY: ou1z") end)
+
+Main:CreateButton("INFINITE STAMINA", function() while wait() do
+Player.player.basket.stamina.Value = 100 end end)
+
+--// Character
+Character:CreateSlider("WALKSPEED", "WalkSpeed", 16, 100, false, function(ws)
+   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = ws
+end)
+Character:CreateLabel([[<font color="rgb(255,0,0)">JUMPING RESETS WALKSPEED</font>]])
+
+--// Teleports
+Teleports:CreateButton("Click TP [Q]", function()	mouse = Player:GetMouse()
+
+	mouse.KeyDown:connect(function(key)
+		if key == "q" then
+			if mouse.Target then
+				Player.Character.HumanoidRootPart.CFrame = CFrame.new(mouse.Hit.x, mouse.Hit.y + 5, mouse.Hit.z)
+			end
+		end
+	end)end)
+	
+	
+--[[ExampleSection:CreateLabel("This is label")
+ExampleSection:CreateButton("This is button", function() print("This is function") end)
+ExampleSection:CreateToggle("This is toggle", "This is flag", function(Toggled) print("This is optional argument", Toggled) end)]]
