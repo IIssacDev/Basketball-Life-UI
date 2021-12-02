@@ -1,3 +1,4 @@
+local MainUI = Instance.new("ScreenGui")
 local Button = Instance.new("TextButton")
 Button.TextColor3 = Color3.fromRGB(255,255,255)
 Button.TextStrokeColor3 = Color3.fromRGB(0,0,0)
