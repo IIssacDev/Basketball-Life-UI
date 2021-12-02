@@ -1,3 +1,12 @@
+local Button = Instance.new("TextButton")
+Button.TextColor3 = Color3.fromRGB(255,255,255)
+Button.TextStrokeColor3 = Color3.fromRGB(0,0,0)
+Button.TextStrokeTransparency = 0
+Button.Font = "SourceSansSemibold"
+Button.TextScaled = true
+Button.Style = "RobloxRoundButton"
+Button.Size = UDim2.new(0.49, 0, 0.226, 0)
+Button.Position = UDim2.new(0,0,0,0)
 local AWFrame = Instance.new("Frame")
 AWFrame.Parent = MainUI
 AWFrame.Name = "IBFrame"
